@@ -20,6 +20,13 @@ def CohenEffectSize(group1, group2):
     return d
 
 def ComputeDifferencesInWeights(live, firsts, others):
+    """Computes and displays statistics related to weight and pregnancy length between first and later babies.
+    
+    live:Dataframe
+    firsts:Dataframe
+    others:Dataframe
+    
+    """
     
     print('Mean weight(lbs)')
     print('Live: ' + live.totalwgt_lb.mean())
@@ -35,5 +42,5 @@ def ComputeDifferencesInWeights(live, firsts, others):
     print('Cohen\'s effect size for pregnancy length: '  + CohenEffectSize(firsts, others).prglngth.mean())
     
     
-# While first babies tend to have slightly (0.03 std deviations) longer pregnancies, they also tend to be slightly (0.09 standard deviations) lighter.
+#While first babies tend to have slightly (0.03 std deviations) longer pregnancies, they also tend to be slightly (0.09 standard deviations) lighter.
 #This is unexpected, given that shorter pregnancies would normally indicate lighter babies. 
