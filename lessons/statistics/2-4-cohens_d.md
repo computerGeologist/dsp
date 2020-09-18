@@ -1,5 +1,7 @@
 [Think Stats Chapter 2 Exercise 4](http://greenteapress.com/thinkstats2/html/thinkstats2003.html#toc24) (Cohen's d)
 
+```
+#First, calculate Cohen's d as a measure of the difference between any two groups. 
 def CohenEffectSize(group1, group2):
     """Computes Cohen's effect size for two groups.
     
@@ -18,7 +20,8 @@ def CohenEffectSize(group1, group2):
     pooled_var = (n1 * var1 + n2 * var2) / (n1 + n2)
     d = diff / np.sqrt(pooled_var)
     return d
-
+    
+#Second, determine the key statistics of these groups. 
 def ComputeDifferencesInWeights(live, firsts, others):
     """Computes and displays statistics related to weight and pregnancy length between first and later babies.
     
@@ -28,7 +31,7 @@ def ComputeDifferencesInWeights(live, firsts, others):
     
     """
     
-    print('Mean weight(lbs)')
+    print('Mean weight(lbs)') #
     print('Live: ' + live.totalwgt_lb.mean())
     print('Firsts: ' + others.totalwgt_lb.mean())
     print('Others: ' + firsts.totalwgt_lb.mean())
@@ -38,9 +41,9 @@ def ComputeDifferencesInWeights(live, firsts, others):
     print('Firsts: ' + firsts.prglngth.mean())
     print('Others: ' + others.prglngth.mean())
     
-    print('Cohen\'s effect size for weight: ' + CohenEffectSize(firsts, others).totalwgy_lb.mean())
-    print('Cohen\'s effect size for pregnancy length: '  + CohenEffectSize(firsts, others).prglngth.mean())
-    
+    print('Cohen\'s effect size for weight: ' + CohenEffectSize(firsts, others).totalwgy_lb.mean()) #Approximately 0.3
+    print('Cohen\'s effect size for pregnancy length: '  + CohenEffectSize(firsts, others).prglngth.mean()) #Approximately -0.09
+```
     
 #While first babies tend to have slightly (0.03 std deviations) longer pregnancies, they also tend to be slightly (0.09 standard deviations) lighter.
 #This is unexpected, given that shorter pregnancies would normally indicate lighter babies. 
